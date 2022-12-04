@@ -20,9 +20,11 @@
       const canvas = new fabric.Canvas("canvas_in_html");
       canvas.setWidth(300);
 canvas.setHeight(200);
-canvas.setBackgroundColor(
-"rgba(255, 255, 200, 1)",
-canvas.renderAll.bind(canvas));
+// canvas.setBackgroundColor(
+// "rgba(255, 255, 200, 1)",
+// canvas.renderAll.bind(canvas));
+canvas.setBackgroundImage("https://th.bing.com/th/id/R.4c5f4b654d397dbf388439c146fc2a43?rik=tAXLyC2QQDAW4w&riu=http%3a%2f%2fwww.tandemconstruction.com%2fsites%2fdefault%2ffiles%2fstyles%2fproject_slider_main%2fpublic%2fimages%2fproject-images%2fIMG-Student-Union_6.jpg%3fitok%3dSIO_SJym&ehk=J7Rf60RWZAMlFREdj%2f7pdLWdGMn%2bS07tQsou0pZGgIA%3d&risl=&pid=ImgRaw&r=0",
+canvas.renderAll.bind(canvas),);
 canvas.isDrawingMode = true;
 canvas.freeDrawingBrush.width = 10;
 canvas.freeDrawingBrush.color = "rgba(255,50,40,0.5)";
