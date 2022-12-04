@@ -5,9 +5,37 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.0/fabric.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
+    <div>
+      <canvas id="canvas_in_html" width="300" height="200" style="border:5px solid; border-color:#999999;"></canvas>
+      <button onclick="saveCanvas()">a</button>
+    </div>
+    <script>
+      const canvas = new fabric.Canvas("canvas_in_html");
+      canvas.setWidth(300);
+canvas.setHeight(200);
+canvas.setBackgroundColor(
+"rgba(255, 255, 200, 1)",
+canvas.renderAll.bind(canvas));
+canvas.isDrawingMode = true;
+canvas.freeDrawingBrush.width = 10;
+canvas.freeDrawingBrush.color = "rgba(255,50,40,0.5)";
+function saveCanvas(canvas_id)
+{
+	var canvas = document.getElementById(canvas_id);
+	//アンカータグを作成
+	var a = document.createElement('a');
+	//canvasをJPEG変換し、そのBase64文字列をhrefへセット
+	a.href = canvas.toDataURL('image/jpeg', 0.85);
+	//ダウンロード時のファイル名を指定
+	a.download = 'download.jpg';
+	//クリックイベントを発生させる
+	a.click();
+}
+    </script>
   </body>
 </html>
