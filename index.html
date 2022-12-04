@@ -28,10 +28,10 @@ canvas.freeDrawingBrush.width = 10;
 canvas.freeDrawingBrush.color = "rgba(255,50,40,0.5)";
 function saveCanvas()
 {
-	var canvas = document.getElementById("canvas");
+	var canvas = document.getElementById("canvas_in_html");
 	//アンカータグを作成
 	let link = document.getElementById('hiddenLink')
-  link.href = canvas.toDataURL()
+  link.href = canvas.toDataURL("image/png")
   link.click()
 }
     </script>
