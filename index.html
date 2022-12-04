@@ -24,13 +24,13 @@ canvas.renderAll.bind(canvas));
 canvas.isDrawingMode = true;
 canvas.freeDrawingBrush.width = 10;
 canvas.freeDrawingBrush.color = "rgba(255,50,40,0.5)";
-function saveCanvas(canvas_id)
+function saveCanvas()
 {
-	var canvas = document.getElementById(canvas_id);
+	var canvas = document.getElementById("canvas");
 	//アンカータグを作成
 	var a = document.createElement('a');
 	//canvasをJPEG変換し、そのBase64文字列をhrefへセット
-	a.href = canvas.toDataURL('image/jpeg', 0.85);
+	 a.href = canvas.toDataURL('image/jpeg');
 	//ダウンロード時のファイル名を指定
 	a.download = 'download.jpg';
 	//クリックイベントを発生させる
