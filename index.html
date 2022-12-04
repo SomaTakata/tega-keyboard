@@ -13,6 +13,8 @@
     <div>
       <canvas id="canvas_in_html" width="300" height="200" style="border:5px solid; border-color:#999999;"></canvas>
       <button onclick="saveCanvas()">a</button>
+      <a id="hiddenLink" download="canvas.png">link</a>
+      
     </div>
     <script>
       const canvas = new fabric.Canvas("canvas_in_html");
@@ -28,13 +30,9 @@ function saveCanvas()
 {
 	var canvas = document.getElementById("canvas");
 	//アンカータグを作成
-	var a = document.createElement('a');
-	//canvasをJPEG変換し、そのBase64文字列をhrefへセット
-	 a.href = canvas.toDataURL('image/jpeg');
-	//ダウンロード時のファイル名を指定
-	a.download = 'download.jpg';
-	//クリックイベントを発生させる
-	a.click();
+	let link = document.getElementById('hiddenLink')
+  link.href = canvas.toDataURL()
+  link.click()
 }
     </script>
   </body>
