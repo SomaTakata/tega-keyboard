@@ -51,17 +51,6 @@ const App = () => {
     setBrush(canvas); // ペンの色とか種類を指定(以下に解説)
 
     setBackgroundImage(canvas); // 背景画像を設定(以下に解説)
-    var download = document.getElementById("btn-save");
-    download.addEventListener("click", function () {
-      // ダウンロードファイル名指定
-      this.setAttribute("download", "sample.jpg");
-      // キャンバスのオブジェクト取得
-      var canvas = document.getElementById("canvas");
-      // base64に変換
-      var base64 = canvas.toDataURL("image/jpeg");
-      // ダウンロード
-      document.getElementById("btn-save").href = base64;
-    });
   }, []);
   // // キャンバスの共通オブジェクト
   // var canvas = null;
@@ -99,6 +88,17 @@ const App = () => {
   //       });
   //     };
 
+  var download = document.getElementById("btn-save");
+  download.addEventListener("click", function () {
+    // ダウンロードファイル名指定
+    this.setAttribute("download", "sample.jpg");
+    // キャンバスのオブジェクト取得
+    canvas = document.getElementById("canvas");
+    // base64に変換
+    var base64 = canvas.toDataURL("image/jpeg");
+    // ダウンロード
+    document.getElementById("download").href = base64;
+  });
   //     // 描いた内容はクリア、画像はそのまま
   //     var init = document.getElementById("init");
   //     init.addEventListener("click", function () {
