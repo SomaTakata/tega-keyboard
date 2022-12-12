@@ -1,10 +1,25 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#canvasDiv {
+  margin-top: 30px;
+  height: 200px;
+  width: 200px;
+  border: solid 3px black;
+  border-radius: 5px;
 }
-
-canvas {
-  border: solid 1px red;
+#hiddenLink {
+  display: none;
+}
+button {
+  width: 95px;
+  height: 30px;
+  display: inline-block;
+  margin: 10px 5px;
+  background-color: gold;
+  padding-top: 5px;
+  border: black 2.5px solid;
+  border-radius: 5px;
+  color: black;
+  font-weight: bolder;
+}
+#next {
+  margin: 40px 50px;
 }

@@ -1,31 +1,20 @@
 import "./App.css";
 import { fabric } from "fabric";
 import { useEffect } from "react";
-
-const CANVAS_ID = "canvas";
+import { useState } from "react";
 
 const App = () => {
+  const [image, setImage] = useState();
   const setBrush = (canvas) => {
     if (canvas.freeDrawingBrush) {
       const brush = canvas.freeDrawingBrush;
-      brush.color = "white"; // ブラシの色指定(#FFFFFFやrgb(255,255,255)等の書き方でも可)
-      if (brush.getPatternSrc) {
-        brush.source = brush.getPatternSrc.call(brush); // 設定を反映
-      }
-      brush.width = 10; // 線の太さを指定
-      brush.shadow = new fabric.Shadow({
-        // 線に影をつける
-        blur: 3,
-        offsetX: 0,
-        offsetY: 0,
-        affectStroke: true,
-        color: "white",
-      });
+      brush.color = "black";
+      brush.width = 6;
     }
   };
+
   const setBackgroundImage = (canvas) => {
-    fabric.Image.fromURL(
-      "https://th.bing.com/th/id/OIP.AdXOJoJXdFsXRsuHhcXD8wHaFL?pid=ImgDet&rs=1",
+    "./canvas.png",
       (img) => {
         img.set({
           opacity: 1, // 透明度
@@ -33,89 +22,60 @@ const App = () => {
           scaleY: canvas.height / img.height, // Y軸の拡大率
         });
         canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
-      }
-    );
+      };
   };
-  // document.getElementById("btn-save").addEventListener("click", () => {
-  //   const link = document.getElementById("link-download");
-  //   const dataurl = canvas.toDataURL("image/jpeg"); // canvasのピクセルデータをDataURLに変換
-  //   link.href = dataurl; // DataURLをダウンロードリンクに設定
-  //   link.click(); // ダウンロード実行
 
   // });
   useEffect(() => {
     const canvas = new fabric.Canvas("canvas", {
-      isDrawingMode: true, // 手書き入力ON
+      isDrawingMode: true,
+      height: 200,
+      width: 200,
     });
-
-    setBrush(canvas); // ペンの色とか種類を指定(以下に解説)
-
-    setBackgroundImage(canvas); // 背景画像を設定(以下に解説)
+    setBrush(canvas);
+    setBackgroundImage(canvas);
   }, []);
-  // // キャンバスの共通オブジェクト
-  // var canvas = null;
-  // // 読み込むファイル名（動的に変えてもＯＫ）
-  // var FILENAME = "canvas.jpg";
 
-  // window.addEventListener("load", function () {
-  //   // キャンバスの初期設定
-  //   const canvasinit = function () {
-  //     // キャンバス取得
-  //     var canvas = new fabric.Canvas("canvas");
+  const download = () => {
+    const canvas = document.getElementById("canvas");
+    const link = document.getElementById("hiddenLink");
 
-  //     // 手書きモードOK
-  //     canvas.isDrawingMode = true;
-  //     // 手書きの色
-  //     canvas.freeDrawingBrush.color = "#990000";
-  //     // 手書きの太さ
-  //     canvas.freeDrawingBrush.width = 10;
+    link.href = canvas.toDataURL("image/png");
+    localStorage.setItem("あ", link.href);
 
-  //     // 画像読み込み
-  //     var img = new Image();
-  //     img.src = FILENAME;
+    var data = localStorage.getItem("あ");
 
-  //     // 画像読み込んだときの処理
-  //     img.onload = function () {
-  //       // キャンバスサイズを設定()
-  //       canvas.setWidth(this.width);
-  //       canvas.setHeight(this.height);
+    console.log(data);
+  };
 
-  //       // サイズを指定画像に合わせるために読み込み終わったときに、キャンバスに設定する
-  //       canvas.setBackgroundImage(FILENAME, canvas.renderAll.bind(canvas), {
-  //         // キャンバス内の画像サイズを設定
-  //         scaleX: canvas.width / img.width,
-  //         scaleY: canvas.height / img.height,
-  //       });
-  //     };
+  const clearCanvas = (e) => {
+    const cvs = document.getElementById("canvas");
+    const ctx = cvs.getContext("2d");
+    ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
+    ctx.beginPath();
 
-  var download = document.getElementById("btn-save");
-  download.addEventListener("click", function () {
-    // ダウンロードファイル名指定
-    this.setAttribute("download", "sample.jpg");
-    // キャンバスのオブジェクト取得
-    canvas = document.getElementById("canvas");
-    // base64に変換
-    var base64 = canvas.toDataURL("image/jpeg");
-    // ダウンロード
-    document.getElementById("download").href = base64;
-  });
-  //     // 描いた内容はクリア、画像はそのまま
-  //     var init = document.getElementById("init");
-  //     init.addEventListener("click", function () {
-  //       // キャンバスクリア
-  //       canvas.clear();
-  //       // 画像を表示(上記onload処理にいく)
-  //       img.src = FILENAME;
-  //     });
-  //   };
-  //   // 初期処理で実行
-  //   useEffect(() => {
-  //     canvasinit();
-  //   }, []);
+    console.log("リセット！");
+  };
 
-  // ダウンロード処理
-
-  return;
+  return (
+    <div id="items" align="center">
+      <div id="canvasDiv">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div>
+        <button onClick={clearCanvas}>クリア</button>
+        <button onClick={download}>"あ"の追加</button>
+        <a id="hiddenLink" download="canvas.png">
+          link
+        </a>
+        <div id="next" align="center">
+          <button id="a">＜＜　あ　</button>
+          <button id="a">　い　＞＞</button>
+        </div>
+        <img src=""></img>
+      </div>
+    </div>
+  );
 };
 
 export default App;
