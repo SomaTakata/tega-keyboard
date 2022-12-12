@@ -26,23 +26,23 @@
     </div> -->
 
     <script>
-      // const canvas = new fabric.Canvas("canvas_in_html");
-      // canvas.setWidth(200);
-      // canvas.setHeight(200);
-      // // canvas.setBackgroundColor(
-      // // "rgba(255, 255, 200, 1)",
-      // // canvas.renderAll.bind(canvas));
-      // canvas.setBackgroundImage("./canvas.png", canvas.renderAll.bind(canvas));
-      // canvas.isDrawingMode = true;
-      // canvas.freeDrawingBrush.width = 10;
-      // canvas.freeDrawingBrush.color = "black";
-      // function saveCanvas() {
-      //   var canvas = document.getElementById("canvas_in_html");
-      //   //アンカータグを作成
-      //   let link = document.getElementById("hiddenLink");
-      //   link.href = canvas.toDataURL("image/png");
-      //   link.click();
-      // }
+      const canvas = new fabric.Canvas("canvas_in_html");
+      canvas.setWidth(200);
+      canvas.setHeight(200);
+      // canvas.setBackgroundColor(
+      // "rgba(255, 255, 200, 1)",
+      // canvas.renderAll.bind(canvas));
+      canvas.setBackgroundImage("./canvas.png", canvas.renderAll.bind(canvas));
+      canvas.isDrawingMode = true;
+      canvas.freeDrawingBrush.width = 10;
+      canvas.freeDrawingBrush.color = "black";
+      function saveCanvas() {
+        var canvas = document.getElementById("canvas_in_html");
+        //アンカータグを作成
+        let link = document.getElementById("hiddenLink");
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      }
     </script>
   </body>
 </html>
