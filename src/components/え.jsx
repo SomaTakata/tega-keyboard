@@ -66,187 +66,279 @@ export const え = () => {
         </a>
         <ul class="horizontal_scroll">
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("あ")}></img>
+            <Link to="./">
+              <img id="galI" src={localStorage.getItem("あ")}></img>
+            </Link>
             <p id="galT">あ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("い")}></img>
+            <Link to="./い">
+              <img id="galI" src={localStorage.getItem("い")}></img>
+            </Link>
             <p id="galT">い</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("う")}></img>
+            <Link to="./う">
+              <img id="galI" src={localStorage.getItem("う")}></img>
+            </Link>
             <p id="galT">う</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("え")}></img>
+            <Link to="./え">
+              <img id="galI" src={localStorage.getItem("え")}></img>
+            </Link>
             <p id="galT">え</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("お")}></img>
+            <Link to="./お">
+              <img id="galI" src={localStorage.getItem("お")}></img>
+            </Link>
             <p id="galT">お</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("か")}></img>
+            <Link to="./か">
+              <img id="galI" src={localStorage.getItem("か")}></img>
+            </Link>
             <p id="galT">か</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("き")}></img>
+            <Link to="./き">
+              <img id="galI" src={localStorage.getItem("き")}></img>
+            </Link>
             <p id="galT">き</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("く")}></img>
+            <Link to="./く">
+              <img id="galI" src={localStorage.getItem("く")}></img>
+            </Link>
             <p id="galT">く</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("け")}></img>
+            <Link to="./け">
+              <img id="galI" src={localStorage.getItem("け")}></img>
+            </Link>
             <p id="galT">け</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("こ")}></img>
+            <Link to="./こ">
+              <img id="galI" src={localStorage.getItem("こ")}></img>
+            </Link>
             <p id="galT">こ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("さ")}></img>
+            <Link to="./さ">
+              <img id="galI" src={localStorage.getItem("さ")}></img>
+            </Link>
             <p id="galT">さ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("し")}></img>
+            <Link to="./し">
+              <img id="galI" src={localStorage.getItem("し")}></img>
+            </Link>
             <p id="galT">し</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("す")}></img>
+            <Link to="./す">
+              <img id="galI" src={localStorage.getItem("す")}></img>
+            </Link>
             <p id="galT">す</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("せ")}></img>
+            <Link to="./せ">
+              <img id="galI" src={localStorage.getItem("せ")}></img>
+            </Link>
             <p id="galT">せ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("そ")}></img>
+            <Link to="./そ">
+              <img id="galI" src={localStorage.getItem("そ")}></img>
+            </Link>
             <p id="galT">そ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("た")}></img>
+            <Link to="./た">
+              <img id="galI" src={localStorage.getItem("た")}></img>
+            </Link>
             <p id="galT">た</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ち")}></img>
+            <Link to="./ち">
+              <img id="galI" src={localStorage.getItem("ち")}></img>
+            </Link>
             <p id="galT">ち</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("つ")}></img>
+            <Link to="./つ">
+              <img id="galI" src={localStorage.getItem("つ")}></img>
+            </Link>
             <p id="galT">つ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("て")}></img>
+            <Link to="./て">
+              <img id="galI" src={localStorage.getItem("て")}></img>
+            </Link>
             <p id="galT">て</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("と")}></img>
+            <Link to="./と">
+              <img id="galI" src={localStorage.getItem("と")}></img>
+            </Link>
             <p id="galT">と</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("な")}></img>
+            <Link to="./な">
+              <img id="galI" src={localStorage.getItem("な")}></img>
+            </Link>
             <p id="galT">な</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("に")}></img>
+            <Link to="./に">
+              <img id="galI" src={localStorage.getItem("に")}></img>
+            </Link>
             <p id="galT">に</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ぬ")}></img>
+            <Link to="./ぬ">
+              <img id="galI" src={localStorage.getItem("ぬ")}></img>
+            </Link>
             <p id="galT">ぬ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ね")}></img>
+            <Link to="./ね">
+              <img id="galI" src={localStorage.getItem("ね")}></img>
+            </Link>
             <p id="galT">ね</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("の")}></img>
+            <Link to="./の">
+              <img id="galI" src={localStorage.getItem("の")}></img>
+            </Link>
             <p id="galT">の</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("は")}></img>
+            <Link to="./は">
+              <img id="galI" src={localStorage.getItem("は")}></img>
+            </Link>
             <p id="galT">は</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ひ")}></img>
+            <Link to="./ひ">
+              <img id="galI" src={localStorage.getItem("ひ")}></img>
+            </Link>
             <p id="galT">ひ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ふ")}></img>
+            <Link to="./ふ">
+              <img id="galI" src={localStorage.getItem("ふ")}></img>
+            </Link>
             <p id="galT">ふ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("へ")}></img>
+            <Link to="./へ">
+              <img id="galI" src={localStorage.getItem("へ")}></img>
+            </Link>
             <p id="galT">へ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ほ")}></img>
+            <Link to="./ほ">
+              <img id="galI" src={localStorage.getItem("ほ")}></img>
+            </Link>
             <p id="galT">ほ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ま")}></img>
+            <Link to="./ま">
+              <img id="galI" src={localStorage.getItem("ま")}></img>
+            </Link>
             <p id="galT">ま</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("み")}></img>
+            <Link to="./み">
+              <img id="galI" src={localStorage.getItem("み")}></img>
+            </Link>
             <p id="galT">み</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("む")}></img>
+            <Link to="./む">
+              <img id="galI" src={localStorage.getItem("む")}></img>
+            </Link>
             <p id="galT">む</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("め")}></img>
+            <Link to="./め">
+              <img id="galI" src={localStorage.getItem("め")}></img>
+            </Link>
             <p id="galT">め</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("も")}></img>
+            <Link to="./も">
+              <img id="galI" src={localStorage.getItem("も")}></img>
+            </Link>
             <p id="galT">も</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("や")}></img>
+            <Link to="./や">
+              <img id="galI" src={localStorage.getItem("や")}></img>
+            </Link>
             <p id="galT">や</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ゆ")}></img>
+            <Link to="./ゆ">
+              <img id="galI" src={localStorage.getItem("ゆ")}></img>
+            </Link>
             <p id="galT">ゆ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("よ")}></img>
+            <Link to="./よ">
+              <img id="galI" src={localStorage.getItem("よ")}></img>
+            </Link>
             <p id="galT">よ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ら")}></img>
+            <Link to="./ら">
+              <img id="galI" src={localStorage.getItem("ら")}></img>
+            </Link>
             <p id="galT">ら</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("り")}></img>
+            <Link to="./り">
+              <img id="galI" src={localStorage.getItem("り")}></img>
+            </Link>
             <p id="galT">り</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("る")}></img>
+            <Link to="./る">
+              <img id="galI" src={localStorage.getItem("る")}></img>
+            </Link>
             <p id="galT">る</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("れ")}></img>
+            <Link to="./れ">
+              <img id="galI" src={localStorage.getItem("れ")}></img>
+            </Link>
             <p id="galT">れ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ろ")}></img>
+            <Link to="./ろ">
+              <img id="galI" src={localStorage.getItem("ろ")}></img>
+            </Link>
             <p id="galT">ろ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("わ")}></img>
+            <Link to="./わ">
+              <img id="galI" src={localStorage.getItem("わ")}></img>
+            </Link>
             <p id="galT">わ</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("を")}></img>
+            <Link to="./を">
+              <img id="galI" src={localStorage.getItem("を")}></img>
+            </Link>
             <p id="galT">を</p>
           </div>
           <div id="gal">
-            <img id="galI" src={localStorage.getItem("ん")}></img>
+            <Link to="./ん">
+              <img id="galI" src={localStorage.getItem("ん")}></img>
+            </Link>
             <p id="galT">ん</p>
           </div>
         </ul>
