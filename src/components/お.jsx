@@ -65,12 +65,7 @@ export const お = () => {
           link
         </a>
 
-        <div id="next" align="center">
-          <Link to="./え">
-            <button id="a">＜＜　え　</button>
-          </Link>
-        </div>
-        <ul>
+        <ul class="horizontal_scroll">
           <div id="gal">
             <img id="galI" src={localStorage.getItem("あ")}></img>
             <p id="galT">あ</p>
@@ -256,6 +251,11 @@ export const お = () => {
             <p id="galT">ん</p>
           </div>
         </ul>
+        <div id="next" align="center">
+          <Link to="./え">
+            <button id="a">＜＜　え　</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
