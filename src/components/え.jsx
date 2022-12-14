@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 let canvas = undefined;
 
-export const あ = () => {
+export const え = () => {
   const canvasRef = useRef(null);
 
   const setBrush = (canvas) => {
@@ -50,7 +50,7 @@ export const あ = () => {
     const link = document.getElementById("hiddenLink");
 
     link.href = canvasRef.current.toDataURL("image/png");
-    localStorage.setItem("あ", link.href);
+    localStorage.setItem("え", link.href);
   };
 
   const clearCanvas = (e) => {
