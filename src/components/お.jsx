@@ -1,8 +1,13 @@
 import { fabric } from "fabric";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+
 import "./App.css";
-export const お = () => {
+let canvas = undefined;
+
+export const あ = () => {
+  const canvasRef = useRef(null);
+
   const setBrush = (canvas) => {
     if (canvas.freeDrawingBrush) {
       const brush = canvas.freeDrawingBrush;
@@ -25,36 +30,36 @@ export const お = () => {
 
   // });
   useEffect(() => {
-    const canvas = new fabric.Canvas("canvas", {
+    canvas = new fabric.Canvas(canvasRef.current, {
       isDrawingMode: true,
       height: 200,
       width: 200,
     });
     setBrush(canvas);
     setBackgroundImage(canvas);
+
+    return () => {
+      if (canvas) {
+        canvas.dispose();
+        canvas = undefined;
+      }
+    };
   }, []);
 
   const download = () => {
-    const canvas = document.getElementById("canvas");
     const link = document.getElementById("hiddenLink");
 
-    link.href = canvas.toDataURL("image/png");
-    localStorage.setItem("お", link.href);
+    link.href = canvasRef.current.toDataURL("image/png");
+    localStorage.setItem("あ", link.href);
   };
 
   const clearCanvas = (e) => {
-    const cvs = document.getElementById("canvas");
-    const ctx = cvs.getContext("2d");
-    ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
-    ctx.beginPath();
-
-    console.log("リセット！");
+    canvas.clear();
   };
-
   return (
     <div id="items" align="center">
       <div id="canvasDiv">
-        <canvas id="canvas"></canvas>
+        <canvas ref={canvasRef}></canvas>
       </div>
       <div>
         <button onClick={clearCanvas}>クリア</button>
