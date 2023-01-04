@@ -200,7 +200,7 @@ export const Home = () => {
 
       <NextButtons />
       <div>
-        <Link to="/page1">
+        <Link to="/page1" className="link">
           <button className="nextKeyboard">キーボードへ</button>
         </Link>
       </div>

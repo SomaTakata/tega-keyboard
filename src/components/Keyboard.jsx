@@ -1,78 +1,348 @@
 import { Link } from "react-router-dom";
 import "../App.css";
 import { FiDelete } from "react-icons/fi";
+import { useState } from "react";
 
 export const Keyboard = () => {
+  const [characterIndex, setCharacterIndex] = useState(0);
+  const characters = [
+    { key: 0, character: "あ" },
+    { key: 1, character: "い" },
+    { key: 2, character: "う" },
+    { key: 3, character: "え" },
+    { key: 4, character: "お" },
+    { key: 5, character: "か" },
+    { key: 6, character: "き" },
+    { key: 7, character: "く" },
+    { key: 8, character: "け" },
+    { key: 9, character: "こ" },
+    { key: 10, character: "さ" },
+    { key: 11, character: "し" },
+    { key: 12, character: "す" },
+    { key: 13, character: "せ" },
+    { key: 14, character: "そ" },
+    { key: 15, character: "た" },
+    { key: 16, character: "ち" },
+    { key: 17, character: "つ" },
+    { key: 18, character: "て" },
+    { key: 19, character: "と" },
+    { key: 20, character: "な" },
+    { key: 21, character: "に" },
+    { key: 22, character: "ぬ" },
+    { key: 23, character: "ね" },
+    { key: 24, character: "の" },
+    { key: 25, character: "は" },
+    { key: 26, character: "ひ" },
+    { key: 27, character: "ふ" },
+    { key: 28, character: "へ" },
+    { key: 29, character: "ほ" },
+    { key: 30, character: "ま" },
+    { key: 31, character: "み" },
+    { key: 32, character: "む" },
+    { key: 33, character: "め" },
+    { key: 34, character: "も" },
+    { key: 35, character: "や" },
+    { key: 36, character: "ゆ" },
+    { key: 37, character: "よ" },
+    { key: 38, character: "ら" },
+    { key: 39, character: "り" },
+    { key: 40, character: "る" },
+    { key: 41, character: "れ" },
+    { key: 42, character: "ろ" },
+    { key: 43, character: "わ" },
+    { key: 44, character: "を" },
+    { key: 45, character: "ん" },
+  ];
+  const [inputImage, setInputImage] = useState([]);
+
+  const AddImage = (newImage) => {
+    setInputImage((prev) => [...prev, newImage]);
+  };
   return (
     <div className="items" align="center">
-      <body>
-        <div>
-          <div id="header">
-            <Link to="/">
-              <div>入力へ</div>
-            </Link>
+      <Link to="/" className="link">
+        <div className="header">
+          <button className="toHome">入力へ</button>
+        </div>
+      </Link>
+      <div className="imageFolder">
+        {inputImage.map((image) => (
+          <img className="inputImages" src={image} alt="" />
+        ))}
+      </div>
+      <div className="flexContents">
+        {characterIndex === 0 ? (
+          <div className="changeKeyboard"></div>
+        ) : (
+          <div
+            className="changeKeyboard"
+            onClick={() => setCharacterIndex((prev) => prev - 5)}
+          >
+            ←
           </div>
-        </div>
-
-        <div id="content">
-          <input type="text" id="txt" />
-        </div>
-
-        <div id="kb_container">
-          <div id="kb_container2">
-            <div class="kb_key_shadow">
-              <div class="kb_key_flick kb_key_u transparent"></div>
-            </div>
-            <div class="kb_key_shadow">
-              <div class="kb_key_flick kb_key_d transparent"></div>
-            </div>
-            <div class="kb_key_shadow">
-              <div class="kb_key_flick kb_key_l transparent"></div>
-            </div>
-            <div class="kb_key_shadow">
-              <div class="kb_key_flick kb_key_r transparent"></div>
-            </div>
-
-            <div class="kb_key kb_no_input no_flick"></div>
-            <div class="kb_key">ア</div>
-            <div class="kb_key">カ</div>
-            <div class="kb_key">サ</div>
-            <div id="kb_key_bs" class="kb_key kb_no_input_delete no_flick">
-              <FiDelete />
-            </div>
-
-            <div class="kb_key kb_no_input no_flick"></div>
-            <div class="kb_key">タ</div>
-            <div class="kb_key">ナ</div>
-            <div class="kb_key">ハ</div>
-            <div class="kb_key kb_no_input_blank no_flick">空白</div>
-
-            <div class="kb_key kb_no_input no_flick"></div>
-            <div class="kb_key">マ</div>
-            <div class="kb_key">ヤ</div>
-            <div class="kb_key">ラ</div>
-            <div class="kb_key kb_no_input_search no_flick">検索</div>
-
-            <div class="kb_key kb_no_input no_flick"></div>
-            <div id="kb_key_switch" class="kb_key no_flick">
-              <div id="switch_container">
-                <div id="switch1" class="switch">
-                  ゛
-                </div>
-                <div id="switch2" class="switch">
-                  ゜
-                </div>
-                <div id="switch3" class="switch">
-                  小
-                </div>
+        )}
+        {/* {(() => {
+          if (characterIndex === 0) {
+            return <div className="changeKeyboard"></div>;
+          } else {
+            return (
+              <div
+                className="changeKeyboard"
+                onClick={() => setCharacterIndex((prev) => prev - 5)}
+              >
+                ←
               </div>
-            </div>
-            <div class="kb_key">ワ</div>
-            <div class="kb_key kb_no_input no_flick"></div>
-            <div class="kb_key kb_no_input no_flick"></div>
-          </div>
+            );
+          }
+        })()} */}
+        <div className="keyboard">
+          {(() => {
+            const items = [];
+
+            for (let i2 = 0; i2 < 5; i2++) {
+              items.push(
+                <img
+                  className="keyboardI"
+                  src={localStorage.getItem(
+                    characters[characterIndex + i2].character
+                  )}
+                  onClick={() => {
+                    setInputImage((prev) => [
+                      ...prev,
+                      localStorage.getItem(
+                        characters[characterIndex + i2].character
+                      ),
+                    ]);
+                  }}
+                />
+              );
+            }
+            return <>{items}</>;
+          })()}
         </div>
-      </body>
+        <div className="keyboard">
+          {(() => {
+            if (characterIndex === 30) {
+              const items = [];
+              for (let i2 = 0; i2 < 3; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 5].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 5].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            } else {
+              const items = [];
+              for (let i2 = 0; i2 < 5; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 5].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 5].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            }
+          })()}
+        </div>
+        <div className="keyboard">
+          {(() => {
+            if (characterIndex === 25) {
+              const items = [];
+              for (let i2 = 0; i2 < 3; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 10].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 10].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            } else if (characterIndex === 30) {
+              const items = [];
+              for (let i2 = 0; i2 < 5; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 8].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 8].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            } else {
+              const items = [];
+              for (let i2 = 0; i2 < 5; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 10].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 10].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            }
+          })()}
+        </div>
+        <div className="keyboard">
+          {(() => {
+            if (characterIndex === 20) {
+              const items = [];
+              for (let i2 = 0; i2 < 3; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 15].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 15].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            } else if (characterIndex === 25) {
+              const items = [];
+              for (let i2 = 0; i2 < 5; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 13].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 13].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            } else if (characterIndex === 30) {
+              const items = [];
+              for (let i2 = 0; i2 < 3; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 13].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 13].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            } else {
+              const items = [];
+              for (let i2 = 0; i2 < 5; i2++) {
+                items.push(
+                  <img
+                    className="keyboardI"
+                    src={localStorage.getItem(
+                      characters[characterIndex + i2 + 15].character
+                    )}
+                    onClick={() => {
+                      setInputImage((prev) => [
+                        ...prev,
+                        localStorage.getItem(
+                          characters[characterIndex + i2 + 15].character
+                        ),
+                      ]);
+                    }}
+                  />
+                );
+              }
+              return <>{items}</>;
+            }
+          })()}
+        </div>
+        {(() => {
+          if (characterIndex === 30) {
+            return <div className="changeKeyboard"></div>;
+          } else {
+            return (
+              <div
+                className="changeKeyboard"
+                onClick={() => setCharacterIndex((prev) => prev + 5)}
+              >
+                →
+              </div>
+            );
+          }
+        })()}
+      </div>
+      <button className="imageClear" onClick={() => setInputImage([])}>
+        クリア
+      </button>
+      <button className="imageClear">保存</button>
     </div>
   );
 };
