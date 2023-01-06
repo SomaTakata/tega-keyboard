@@ -55,6 +55,26 @@ export const Home = () => {
     { key: 43, character: "わ" },
     { key: 44, character: "を" },
     { key: 45, character: "ん" },
+    { key: 46, character: "が" },
+    { key: 47, character: "ぎ" },
+    { key: 48, character: "ぐ" },
+    { key: 49, character: "げ" },
+    { key: 50, character: "ご" },
+    { key: 51, character: "ざ" },
+    { key: 52, character: "じ" },
+    { key: 53, character: "ず" },
+    { key: 54, character: "ぜ" },
+    { key: 55, character: "ぞ" },
+    { key: 56, character: "だ" },
+    { key: 57, character: "ぢ" },
+    { key: 58, character: "づ" },
+    { key: 59, character: "で" },
+    { key: 60, character: "ど" },
+    { key: 61, character: "ば" },
+    { key: 62, character: "び" },
+    { key: 63, character: "ぶ" },
+    { key: 64, character: "べ" },
+    { key: 65, character: "ぼ" },
   ];
 
   const setBrush = (canvas) => {
@@ -99,7 +119,7 @@ export const Home = () => {
 
     link.href = canvasRef.current.toDataURL("image/png");
     localStorage.setItem(characters[characterIndex].character, link.href);
-    if (characters[characterIndex].character === "ん") {
+    if (characters[characterIndex].character === "ぼ") {
       setCharacterIndex((prev) => 0);
       canvas.clear();
     } else {
@@ -126,7 +146,7 @@ export const Home = () => {
           </button>
         </div>
       );
-    } else if (characters[characterIndex].character === "ん") {
+    } else if (characters[characterIndex].character === "ぼ") {
       return (
         <div className="next" align="center">
           <button

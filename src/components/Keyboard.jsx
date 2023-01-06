@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import { FiDelete } from "react-icons/fi";
 import { useState } from "react";
+import html2canvas from "html2canvas";
 
 export const Keyboard = () => {
   const [characterIndex, setCharacterIndex] = useState(0);
@@ -52,12 +53,37 @@ export const Keyboard = () => {
     { key: 43, character: "わ" },
     { key: 44, character: "を" },
     { key: 45, character: "ん" },
+    { key: 46, character: "が" },
+    { key: 47, character: "ぎ" },
+    { key: 48, character: "ぐ" },
+    { key: 49, character: "げ" },
+    { key: 50, character: "ご" },
+    { key: 51, character: "ざ" },
+    { key: 52, character: "じ" },
+    { key: 53, character: "ず" },
+    { key: 54, character: "ぜ" },
+    { key: 55, character: "ぞ" },
+    { key: 56, character: "だ" },
+    { key: 57, character: "ぢ" },
+    { key: 58, character: "づ" },
+    { key: 59, character: "で" },
+    { key: 60, character: "ど" },
+    { key: 61, character: "ば" },
+    { key: 62, character: "び" },
+    { key: 63, character: "ぶ" },
+    { key: 64, character: "べ" },
+    { key: 65, character: "ぼ" },
   ];
   const [inputImage, setInputImage] = useState([]);
+  const download = (e) => {
+    html2canvas(document.querySelector("#images")).then((canvas) => {
+      const link = document.getElementById("hiddenLink");
 
-  const AddImage = (newImage) => {
-    setInputImage((prev) => [...prev, newImage]);
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
   };
+
   return (
     <div className="items" align="center">
       <Link to="/" className="link">
@@ -65,10 +91,15 @@ export const Keyboard = () => {
           <button className="toHome">入力へ</button>
         </div>
       </Link>
+      <a id="hiddenLink" className="hiddenLink" download="canvas.png">
+        link
+      </a>
       <div className="imageFolder">
-        {inputImage.map((image) => (
-          <img className="inputImages" src={image} alt="" />
-        ))}
+        <div id="images">
+          {inputImage.map((image) => (
+            <img className="inputImages" src={image} alt="" />
+          ))}
+        </div>
       </div>
       <div className="flexContents">
         {characterIndex === 0 ? (
@@ -342,7 +373,9 @@ export const Keyboard = () => {
       <button className="imageClear" onClick={() => setInputImage([])}>
         クリア
       </button>
-      <button className="imageClear">保存</button>
+      <button className="imageClear" onClick={download}>
+        保存
+      </button>
     </div>
   );
 };
