@@ -86,14 +86,17 @@ export const Home = () => {
   };
 
   const setBackgroundImage = (canvas) => {
-    fabric.Image.fromURL("", (img) => {
-      img.set({
-        opacity: 1, // 透明度
-        scaleX: canvas.width / img.width, // X軸の拡大率
-        scaleY: canvas.height / img.height, // Y軸の拡大率
-      });
-      canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
-    });
+    fabric.Image.fromURL(
+      "https://th.bing.com/th/id/OIP.aiaDMGnK4awMT5CO3azn3AAAAA?pid=ImgDet&rs=1",
+      (img) => {
+        img.set({
+          opacity: 30, // 透明度
+          scaleX: canvas.width / img.width, // X軸の拡大率
+          scaleY: canvas.height / img.height, // Y軸の拡大率
+        });
+        canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
+      }
+    );
   };
 
   // });
