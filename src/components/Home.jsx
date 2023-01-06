@@ -87,7 +87,7 @@ export const Home = () => {
 
   const setBackgroundImage = (canvas) => {
     fabric.Image.fromURL(
-      "https://th.bing.com/th/id/OIP.aiaDMGnK4awMT5CO3azn3AAAAA?pid=ImgDet&rs=1",
+      "https://www.animalcare.jp/assets/img/top/slide_l03.jpg",
       (img) => {
         img.set({
           opacity: 30, // 透明度
