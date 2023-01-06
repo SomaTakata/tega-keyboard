@@ -86,17 +86,14 @@ export const Home = () => {
   };
 
   const setBackgroundImage = (canvas) => {
-    fabric.Image.fromURL(
-      "https://www.animalcare.jp/assets/img/top/slide_l03.jpg",
-      (img) => {
-        img.set({
-          opacity: 30, // 透明度
-          scaleX: canvas.width / img.width, // X軸の拡大率
-          scaleY: canvas.height / img.height, // Y軸の拡大率
-        });
-        canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
-      }
-    );
+    fabric.Image.fromURL("", (img) => {
+      img.set({
+        opacity: 30, // 透明度
+        scaleX: canvas.width / img.width, // X軸の拡大率
+        scaleY: canvas.height / img.height, // Y軸の拡大率
+      });
+      canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
+    });
   };
 
   // });
