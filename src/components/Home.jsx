@@ -55,26 +55,26 @@ export const Home = () => {
     { key: 43, character: "わ" },
     { key: 44, character: "を" },
     { key: 45, character: "ん" },
-    { key: 46, character: "が" },
-    { key: 47, character: "ぎ" },
-    { key: 48, character: "ぐ" },
-    { key: 49, character: "げ" },
-    { key: 50, character: "ご" },
-    { key: 51, character: "ざ" },
-    { key: 52, character: "じ" },
-    { key: 53, character: "ず" },
-    { key: 54, character: "ぜ" },
-    { key: 55, character: "ぞ" },
-    { key: 56, character: "だ" },
-    { key: 57, character: "ぢ" },
-    { key: 58, character: "づ" },
-    { key: 59, character: "で" },
-    { key: 60, character: "ど" },
-    { key: 61, character: "ば" },
-    { key: 62, character: "び" },
-    { key: 63, character: "ぶ" },
-    { key: 64, character: "べ" },
-    { key: 65, character: "ぼ" },
+    // { key: 46, character: "が" },
+    // { key: 47, character: "ぎ" },
+    // { key: 48, character: "ぐ" },
+    // { key: 49, character: "げ" },
+    // { key: 50, character: "ご" },
+    // { key: 51, character: "ざ" },
+    // { key: 52, character: "じ" },
+    // { key: 53, character: "ず" },
+    // { key: 54, character: "ぜ" },
+    // { key: 55, character: "ぞ" },
+    // { key: 56, character: "だ" },
+    // { key: 57, character: "ぢ" },
+    // { key: 58, character: "づ" },
+    // { key: 59, character: "で" },
+    // { key: 60, character: "ど" },
+    // { key: 61, character: "ば" },
+    // { key: 62, character: "び" },
+    // { key: 63, character: "ぶ" },
+    // { key: 64, character: "べ" },
+    // { key: 65, character: "ぼ" },
   ];
 
   const setBrush = (canvas) => {
@@ -85,16 +85,16 @@ export const Home = () => {
     }
   };
 
-  const setBackgroundImage = (canvas) => {
-    fabric.Image.fromURL("", (img) => {
-      img.set({
-        opacity: 30, // 透明度
-        scaleX: canvas.width / img.width, // X軸の拡大率
-        scaleY: canvas.height / img.height, // Y軸の拡大率
-      });
-      canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
-    });
-  };
+  // const setBackgroundImage = (canvas) => {
+  //   fabric.Image.fromURL("", (img) => {
+  //     img.set({
+  //       opacity: 30, // 透明度
+  //       scaleX: canvas.width / img.width, // X軸の拡大率
+  //       scaleY: canvas.height / img.height, // Y軸の拡大率
+  //     });
+  //     canvas.setBackgroundImage(img, canvas.requestRenderAll.bind(canvas)); // 画像を背景に設定
+  //   });
+  // };
 
   // });
   useEffect(() => {
@@ -104,7 +104,7 @@ export const Home = () => {
       width: 200,
     });
     setBrush(canvas);
-    setBackgroundImage(canvas);
+    // setBackgroundImage(canvas);
 
     return () => {
       if (canvas) {
@@ -119,7 +119,7 @@ export const Home = () => {
 
     link.href = canvasRef.current.toDataURL("image/png");
     localStorage.setItem(characters[characterIndex].character, link.href);
-    if (characters[characterIndex].character === "ぼ") {
+    if (characters[characterIndex].character === "ん") {
       setCharacterIndex((prev) => 0);
       canvas.clear();
     } else {
@@ -137,7 +137,7 @@ export const Home = () => {
       return (
         <div className="next" align="center">
           <button
-            className="a"
+            className="buttonNext"
             onClick={() => {
               setCharacterIndex((prev) => prev + 1);
             }}
@@ -146,11 +146,11 @@ export const Home = () => {
           </button>
         </div>
       );
-    } else if (characters[characterIndex].character === "ぼ") {
+    } else if (characters[characterIndex].character === "ん") {
       return (
         <div className="next" align="center">
           <button
-            className="a"
+            class="buttonNext"
             onClick={() => {
               setCharacterIndex((prev) => prev - 1);
             }}
@@ -163,7 +163,7 @@ export const Home = () => {
       return (
         <div className="next" align="center">
           <button
-            className="a"
+            className="buttonNext"
             onClick={() => {
               setCharacterIndex((prev) => prev - 1);
             }}
@@ -171,7 +171,7 @@ export const Home = () => {
             ＜＜　{characters[characterIndex - 1].character}
           </button>
           <button
-            className="a"
+            className="buttonNext"
             onClick={() => {
               setCharacterIndex((prev) => prev + 1);
             }}
@@ -188,10 +188,10 @@ export const Home = () => {
         <canvas ref={canvasRef}></canvas>
       </div>
       <div>
-        <button className="a" onClick={clearCanvas}>
+        <button className="buttonClear" onClick={clearCanvas}>
           クリア
         </button>
-        <button className="a" onClick={download}>
+        <button className="buttonAdd" onClick={download}>
           "{characters[characterIndex].character}"の追加
         </button>
         <a id="hiddenLink" className="hiddenLink" download="canvas.png">
@@ -220,7 +220,7 @@ export const Home = () => {
 
       <NextButtons />
       <div>
-        <Link to="/page1" className="link">
+        <Link to="/keyboard" className="link">
           <button className="nextKeyboard">キーボードへ</button>
         </Link>
       </div>

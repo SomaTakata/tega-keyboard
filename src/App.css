@@ -4,44 +4,49 @@
   width: 200px;
   border: solid 3px black;
   border-radius: 5px;
+  box-shadow: 5px 15px 10px rgba(153, 153, 153, 0.274);
 }
 .hiddenLink {
   display: none;
 }
-.a {
-  width: 95px;
-  height: 30px;
-  display: inline-block;
-  margin: 20px 5px;
-  background-color: rgb(233, 196, 137);
-  padding-top: 5px;
-  border: black 2.5px solid;
-  border-radius: 5px;
-  color: black;
-  font-weight: bolder;
-}
 
 .nextKeyboard {
-  width: 190px;
-  height: 60px;
-  margin: 40px 5px;
-  background-color: rgb(255, 123, 0);
-  padding-top: 5px;
-  border: black 2.5px solid;
-  border-radius: 5px;
-  color: black;
-  font-weight: bolder;
+  margin: 20px;
+  width: 330px;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color: #ffffff;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: rgb(0, 0, 0);
+  border: black 3px solid;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
-.backHome {
-  width: 190px;
-  height: 60px;
-  margin: 40px 5px;
-  background-color: rgb(255, 123, 0);
-  padding-top: 5px;
-  border: black 2.5px solid;
-  border-radius: 5px;
-  color: black;
-  font-weight: bolder;
+.toHome {
+  margin: 10px;
+  width: 330px;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color: #ffffff;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: rgb(0, 0, 0);
+  border: black 3px solid;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
 .next {
@@ -51,14 +56,17 @@
   width: 50px;
   height: 50px;
   border-radius: 5px;
-  border: black 2.5px solid;
+  border: rgb(0, 0, 0) 2.5px solid;
+  box-shadow: 0px 3px 4px rgba(153, 153, 153, 0.274);
 }
 .gal {
   margin: 3px;
 }
 .galT {
-  margin-top: 0px;
-  font-weight: 900;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 2px;
+  font-weight: 700;
 }
 .horizontal_scroll {
   overflow-x: scroll;
@@ -66,49 +74,48 @@
   padding: 0 0 12px 8px;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 0px;
 }
 
 .horizontal_scroll > li {
   width: 100%;
   min-width: 140px;
+  margin-top: 0px;
 }
 
 @media screen and (min-width: 768px) {
   .horizontal_scroll > li {
     min-width: inherit;
+    margin-top: 0px;
   }
 }
 
 .horizontal_scroll > li:not(:last-child) {
   margin-right: 5px;
+  margin-top: 0px;
 }
 
 .horizontal_scroll > li:last-child {
   padding-right: 5px;
+  margin-top: 0px;
 }
 
 @media screen and (min-width: 768px) {
   .horizontal_scroll > li:last-child {
     padding-right: 0;
+    margin-top: 0px;
   }
 }
 
 .horizontal_scroll img {
   vertical-align: bottom;
+  margin-top: 0px;
 }
 .header {
   display: flex;
   flex-direction: row;
 }
-.toHome {
-  width: 20%;
-  height: 55px;
-  background-color: rgb(255, 123, 0);
-  border: black 2.5px solid;
-  border-radius: 5px;
-  color: black;
-  font-weight: bolder;
-}
+
 .link {
   text-decoration-line: none;
 }
@@ -125,9 +132,10 @@
 }
 .flexContents {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   bottom: 10%;
+  width: 100%;
+  margin: 10px auto;
+  justify-content: center;
 }
 .changeKeyboard {
   background-color: rgb(255, 255, 255);
@@ -142,20 +150,108 @@
   border: none;
 }
 .imageFolder {
-  border: rgb(134, 118, 85) 2.5px solid;
   display: inline-block;
   height: auto;
   margin-bottom: 20px;
   margin-top: 20px;
-  border-radius: 10px;
+}
+.imageSave {
+  margin: 40px 20px;
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 .imageClear {
-  width: 100px;
-  height: 55px;
-  background-color: rgb(233, 196, 137);
-  border: black 2.5px solid;
-  border-radius: 5px;
-  color: black;
-  font-weight: bolder;
-  margin: 10px;
+  margin: 40px 20px;
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color: #e52e59;
+  box-shadow: 0px 15px 20px rgba(229, 46, 104, 0.483);
+  color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.buttonAdd {
+  margin: 40px 20px;
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.buttonClear {
+  margin: 40px 20px;
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color: #e52e59;
+  box-shadow: 0px 15px 20px rgba(229, 46, 104, 0.483);
+  color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.buttonNext {
+  margin: 20px;
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+  border: #2dcf8e 3px solid;
+  background-color: #ffff;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #2dcf8e;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.077);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.images {
+  border: rgb(0, 0, 0) 3px solid;
+  border-radius: 10px;
+  padding: 2px;
 }

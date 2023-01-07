@@ -95,10 +95,14 @@ export const Keyboard = () => {
         link
       </a>
       <div className="imageFolder">
-        <div id="images">
-          {inputImage.map((image) => (
-            <img className="inputImages" src={image} alt="" />
-          ))}
+        <div className="images">
+          {inputImage.length === 0 ? (
+            <div className="inputImages"></div>
+          ) : (
+            inputImage.map((image) => (
+              <img className="inputImages" src={image} alt="" />
+            ))
+          )}
         </div>
       </div>
       <div className="flexContents">
@@ -373,7 +377,7 @@ export const Keyboard = () => {
       <button className="imageClear" onClick={() => setInputImage([])}>
         クリア
       </button>
-      <button className="imageClear" onClick={download}>
+      <button className="imageSave" onClick={download}>
         保存
       </button>
     </div>
