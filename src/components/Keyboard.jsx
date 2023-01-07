@@ -86,11 +86,6 @@ export const Keyboard = () => {
 
   return (
     <div className="items" align="center">
-      <Link to="/" className="link">
-        <div className="header">
-          <button className="toHome">入力へ</button>
-        </div>
-      </Link>
       <a id="hiddenLink" className="hiddenLink" download="canvas.png">
         link
       </a>
@@ -380,6 +375,11 @@ export const Keyboard = () => {
       <button className="imageSave" onClick={download}>
         保存
       </button>
+      <Link to="/" className="link">
+        <div className="header">
+          <button className="toHome">入力へ</button>
+        </div>
+      </Link>
     </div>
   );
 };
