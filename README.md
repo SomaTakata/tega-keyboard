@@ -1,1 +1,1 @@
-﻿# tegaki-keyboard
+﻿# tega-keyboard
