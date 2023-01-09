@@ -126,7 +126,7 @@ export const Keyboard = () => {
       });
     } else if (i === 9) {
       const hiragana = characters.filter((props) => {
-        return (props.key >= 5 * (i - 1) - 2) & (props.key < 5 * (i - 1) + 5);
+        return (props.key >= 5 * (i - 1) - 2) & (props.key < 5 * (i - 1) + 3);
       });
       return hiragana.map((props) => {
         return (
@@ -214,10 +214,7 @@ export const Keyboard = () => {
       <div className="flexContents">
         <div className="columItem">
           {hiraganaBox(hiraganaIndex)}
-          <div>
-            {" "}
-            <ul className="horizontal_scroll">{hiraganaList()}</ul>
-          </div>
+          <div>{hiraganaList()}</div>
         </div>
 
         {/* {characterIndex === 0 ? (

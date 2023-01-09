@@ -71,8 +71,8 @@
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   padding: 0 0 12px 8px;
-  display: -ms-flexbox;
   display: flex;
+  display: -ms-flexbox;
   margin-top: 0px;
 }
 
@@ -224,10 +224,10 @@
   width: 140px;
   height: 45px;
   font-family: "Roboto", sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  font-weight: bold;
+  font-weight: 900;
   background-color: #e52e59;
   color: #fff;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
@@ -292,7 +292,7 @@
   width: 50px;
   box-shadow: 3px 3px 3px rgba(77, 63, 63, 0.436);
 
-  margin: 1px 5px;
+  margin: 1px 10px;
   font-size: large;
   margin-top: 40px;
 }
