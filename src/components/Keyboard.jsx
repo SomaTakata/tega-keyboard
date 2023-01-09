@@ -75,6 +75,7 @@ export const Keyboard = () => {
     { key: 65, character: "ぼ" },
   ];
   const [inputImage, setInputImage] = useState([]);
+  const [hiraganaIndex, setHiraganaIndex] = useState(1);
   const download = (e) => {
     html2canvas(document.querySelector("#images")).then((canvas) => {
       const link = document.getElementById("hiddenLink");
@@ -84,15 +85,124 @@ export const Keyboard = () => {
     });
   };
 
+  const hiraganaBox = (i) => {
+    if (i < 8) {
+      const hiragana = characters.filter((props) => {
+        return (props.key >= 5 * (i - 1)) & (props.key < 5 * i);
+      });
+      return hiragana.map((props) => {
+        return (
+          <button
+            className="hiraganaButton"
+            onClick={() => {
+              setInputImage((prev) => [
+                ...prev,
+                localStorage.getItem(characters[props.key].character),
+              ]);
+            }}
+          >
+            {props.character}
+          </button>
+        );
+      });
+    } else if (i === 8) {
+      const hiragana = characters.filter((props) => {
+        return (props.key >= 5 * (i - 1)) & (props.key < 5 * i - 2);
+      });
+      return hiragana.map((props) => {
+        return (
+          <button
+            className="hiraganaButton"
+            onClick={() => {
+              setInputImage((prev) => [
+                ...prev,
+                localStorage.getItem(characters[props.key].character),
+              ]);
+            }}
+          >
+            {props.character}
+          </button>
+        );
+      });
+    } else if (i === 9) {
+      const hiragana = characters.filter((props) => {
+        return (props.key >= 5 * (i - 1) - 2) & (props.key < 5 * (i - 1) + 5);
+      });
+      return hiragana.map((props) => {
+        return (
+          <button
+            className="hiraganaButton"
+            onClick={() => {
+              setInputImage((prev) => [
+                ...prev,
+                localStorage.getItem(characters[props.key].character),
+              ]);
+            }}
+          >
+            {props.character}
+          </button>
+        );
+      });
+    } else if (i === 10) {
+      const hiragana = characters.filter((props) => {
+        return (props.key >= 5 * (i - 1) - 2) & (props.key < 5 * (i - 1) + 1);
+      });
+      return hiragana.map((props) => {
+        return (
+          <button
+            className="hiraganaButton"
+            onClick={() => {
+              setInputImage((prev) => [
+                ...prev,
+                localStorage.getItem(characters[props.key].character),
+              ]);
+            }}
+          >
+            {props.character}
+          </button>
+        );
+      });
+    }
+  };
+
+  const hiraganaList = () => {
+    const hiragana = characters.filter((props) => {
+      return (
+        props.key === 0 ||
+        props.key === 5 ||
+        props.key === 10 ||
+        props.key === 15 ||
+        props.key === 20 ||
+        props.key === 25 ||
+        props.key === 30 ||
+        props.key === 35 ||
+        props.key === 38 ||
+        props.key === 43
+      );
+    });
+    return hiragana.map((props, index) => {
+      return (
+        <button
+          className="hiraganaButtonList"
+          onClick={() => {
+            setHiraganaIndex(index + 1);
+          }}
+        >
+          {props.character}
+        </button>
+      );
+    });
+  };
+
   return (
     <div className="items" align="center">
       <a id="hiddenLink" className="hiddenLink" download="canvas.png">
         link
       </a>
       <div className="imageFolder">
-        <div className="images">
+        <div id="images" className="images">
           {inputImage.length === 0 ? (
-            <div className="inputImages"></div>
+            <div className="inputImagesBLank"></div>
           ) : (
             inputImage.map((image) => (
               <img className="inputImages" src={image} alt="" />
@@ -100,8 +210,17 @@ export const Keyboard = () => {
           )}
         </div>
       </div>
+
       <div className="flexContents">
-        {characterIndex === 0 ? (
+        <div className="columItem">
+          {hiraganaBox(hiraganaIndex)}
+          <div>
+            {" "}
+            <ul className="horizontal_scroll">{hiraganaList()}</ul>
+          </div>
+        </div>
+
+        {/* {characterIndex === 0 ? (
           <div className="changeKeyboard"></div>
         ) : (
           <div
@@ -110,7 +229,7 @@ export const Keyboard = () => {
           >
             ←
           </div>
-        )}
+        )} */}
         {/* {(() => {
           if (characterIndex === 0) {
             return <div className="changeKeyboard"></div>;
@@ -125,7 +244,7 @@ export const Keyboard = () => {
             );
           }
         })()} */}
-        <div className="keyboard">
+        {/* <div className="keyboard">
           {(() => {
             const items = [];
 
@@ -367,7 +486,7 @@ export const Keyboard = () => {
               </div>
             );
           }
-        })()}
+        })()}*/}
       </div>
       <button className="imageClear" onClick={() => setInputImage([])}>
         クリア
