@@ -200,14 +200,16 @@ export const Keyboard = () => {
         link
       </a>
       <div className="imageFolder">
-        <div id="images" className="images">
-          {inputImage.length === 0 ? (
-            <div className="inputImagesBLank"></div>
-          ) : (
-            inputImage.map((image) => (
-              <img className="inputImages" src={image} alt="" />
-            ))
-          )}
+        <div className="images">
+          <div id="images">
+            {inputImage.length === 0 ? (
+              <div className="inputImagesBLank"></div>
+            ) : (
+              inputImage.map((image) => (
+                <img className="inputImages" src={image} alt="" />
+              ))
+            )}
+          </div>
         </div>
       </div>
 
