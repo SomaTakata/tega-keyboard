@@ -17,26 +17,26 @@ export const Home = () => {
 
   const [explain, setExplain] = useState(0);
   const imgCharacter = [
-    { key: 0, character: "画面", src: "/public/images/1688277150688.JPG" },
+    { key: 0, character: "画面", src: "/images/1688277150688.JPG" },
     {
       key: 1,
       character: "キャンバスに記入",
-      src: "/public/images/S__403783724.JPG",
+      src: "/images/S__403783724.JPG",
     },
     {
       key: 2,
       character: "追加ボタンで追加",
-      src: "/public/images/S__403783725.JPG",
+      src: "/images/S__403783725.JPG",
     },
     {
       key: 3,
       character: "キーボードへを押し移動し打ち込む",
-      src: "/public/images/S__403783726.JPG",
+      src: "/images/S__403783726.JPG",
     },
     {
       key: 4,
       character: "保存を押しダウンロード",
-      src: "/public/images/S__403783727.JPG",
+      src: "/images/S__403783727.JPG",
     },
   ];
   const characters = [
