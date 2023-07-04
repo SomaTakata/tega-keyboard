@@ -2,12 +2,43 @@ import { fabric } from "fabric";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
+import { BsQuestionCircle } from "react-icons/bs";
+import { ImCross } from "react-icons/im";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import "../App.css";
 let canvas = undefined;
 
 export const Home = () => {
   const [characterIndex, setCharacterIndex] = useState(0);
   const canvasRef = useRef(null);
+  const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+
+  const [explain, setExplain] = useState(0);
+  const imgCharacter = [
+    { key: 0, character: "画面", src: "/src/assets/1688277150688.jpg" },
+    {
+      key: 1,
+      character: "キャンバスに記入",
+      src: "/src/assets/S__403783724.jpg",
+    },
+    {
+      key: 2,
+      character: "追加ボタンで追加",
+      src: "/src/assets/S__403783725.jpg",
+    },
+    {
+      key: 3,
+      character: "キーボードへを押し移動し打ち込む",
+      src: "/src/assets/S__403783726.jpg",
+    },
+    {
+      key: 4,
+      character: "保存を押しダウンロード",
+      src: "/src/assets/S__403783727.jpg",
+    },
+  ];
   const characters = [
     { key: 0, character: "あ" },
     { key: 1, character: "い" },
@@ -114,6 +145,14 @@ export const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (localStorage.getItem("explain") === null) {
+      setEditModalIsOpen(true);
+      localStorage.setItem("explain", true);
+    } else if (localStorage.getItem("explain") === true) {
+      setEditModalIsOpen(false);
+    }
+  }, []);
   const download = (e) => {
     const link = document.getElementById("hiddenLink");
 
@@ -184,6 +223,12 @@ export const Home = () => {
   };
   return (
     <div className="items" align="center">
+      <div className="header">
+        <BsQuestionCircle
+          style={{ fontSize: "30px" }}
+          onClick={() => setEditModalIsOpen(true)}
+        />{" "}
+      </div>
       <div className="canvasDiv">
         <canvas ref={canvasRef}></canvas>
       </div>
@@ -224,6 +269,51 @@ export const Home = () => {
           <button className="nextKeyboard">キーボードへ</button>
         </Link>
       </div>
+      <Modal isOpen={editModalIsOpen} className="modal">
+        <div className="header-modal">
+          <ImCross onClick={() => setEditModalIsOpen(false)} />
+        </div>
+        <div className="content-modal">
+          <h3>{imgCharacter[explain].character}</h3>
+        </div>
+        <div className="content-modal">
+          <img src={imgCharacter[explain].src} alt="" className="img" />
+        </div>
+        {(() => {
+          if (explain === 0) {
+            return (
+              <div className="content-modal">
+                <AiOutlineArrowRight
+                  className="arrow"
+                  onClick={() => setExplain(explain + 1)}
+                />
+              </div>
+            );
+          } else if (explain === 4) {
+            return (
+              <div className="content-modal">
+                <AiOutlineArrowLeft
+                  className="arrow"
+                  onClick={() => setExplain(explain - 1)}
+                />
+              </div>
+            );
+          } else {
+            return (
+              <div className="content-modal">
+                <AiOutlineArrowLeft
+                  className="arrow"
+                  onClick={() => setExplain(explain - 1)}
+                />
+                <AiOutlineArrowRight
+                  className="arrow"
+                  onClick={() => setExplain(explain + 1)}
+                />
+              </div>
+            );
+          }
+        })()}
+      </Modal>
     </div>
   );
 };
