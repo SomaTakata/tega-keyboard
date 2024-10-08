@@ -18,7 +18,7 @@ Reactを学び始めたころに、何かプロダクトを作りたいなと思
 - 書いた文字を消去できる
 
 ### 活用技術
-- **フレームワーク・ライブラリ・モジュール**: TypeScript,React, Figma
+- **フレームワーク・ライブラリ・モジュール**: TypeScript,React, fabric.js, Figma
 - **ビルドツール**：Vite
 - **デプロイ先**：Netlify
 - **デバイス**: PC モバイル（Web対応）
